@@ -10,7 +10,7 @@ const CounterInput = () => {
             <button onClick={()=> dispatch({type: 'DECREMENT'})}>-</button>
 
             <br/><br/>
-            <h3>dispatchin actions through functions(professsional method)</h3>
+            <h3>dispatching actions through functions(professsional method)</h3>
             <button onClick={()=> dispatch(incAction())}>+</button>
             <button onClick={()=> dispatch(decAction())}>-</button>
 
