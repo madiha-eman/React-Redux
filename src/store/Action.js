@@ -4,6 +4,7 @@ export const increment = 'INCREMENT'
 export const decrement = 'DECREMENT'
 export const addtodo = 'AddTodo'
 export const deltodo = 'DelTodo'
+export const edittodo = 'EditTodo'
 
 
 
@@ -29,5 +30,11 @@ export const delTodo=(id) =>{
     return {
         type:deltodo,
         payload:id
+    }
+}
+export const editTodo=(id, text) =>{
+    return{
+        type:edittodo,
+        playload:id
     }
 }

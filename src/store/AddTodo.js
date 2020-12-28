@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
-import {addtodo, deltodo} from './Action'
+import {addTodo, delTodo} from './Action'
 import ViewTodo from './ViewTodo'
 
 const AddTodo = () => {
@@ -17,13 +17,13 @@ const AddTodo = () => {
 
     const handleSubmit =(e)=>{
         e.preventDefault();
-        dispatch(addtodo(task))
+        dispatch(addTodo(task))
         
     }
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input type='text' onChange={handleChange} />
+                <input type='text' name='task' onChange={handleChange} />
                 <button type='submit'>Add</button>
             </form>
             <ViewTodo />
