@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch }  from 'react-redux'
 // import { decrementAction, doubleAction, incrementAction } from '../CounterSlice';
-import { add } from '../TodoSlice';
 import VeiwButton from './VeiwButton'
 import { v4 as uuidv4 } from 'uuid'
+import {add, fetchPost} from '../TodoSlice'
 
 
 const CounterButton = () => {
@@ -16,13 +16,14 @@ const CounterButton = () => {
 
     const handleSubmit =(e)=>{
         e.preventDefault();
-        // settask({
-        //     title:title,
-        //     id:uuidv4()
-        // })
+        settask({
+            title:title,
+            id:uuidv4()
+        })
         dispatch(add(title))
-
+        e.target[0].value=''
     }
+ 
     return (
         <div>
             {/* <button onClick={()=> dispatch(incrementAction())}>+</button>
@@ -34,6 +35,7 @@ const CounterButton = () => {
             <input type='text' name='title' onChange={handleChange}/>
             <button type='submit'>Add</button>
             </form>
+            <button onClick={()=> dispatch(fetchPost())}>POST</button>
             <VeiwButton/>
         
         </div>
